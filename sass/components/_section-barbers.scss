@@ -1,0 +1,107 @@
+.barbers {
+	@extend %comp-section;
+
+	padding-bottom: 54px;
+
+	background-color: $BG_LIGHT;
+}
+
+.barbers__intro {
+	@extend %comp-section__intro;
+}
+
+.barbers__heading {
+	@extend %comp-section__heading;
+
+	margin-bottom: 44px;
+}
+
+.barbers__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 34px;
+
+	@media screen and (min-width: 1200px) {
+		gap: 30px;
+	}
+}
+
+.barbers-card {
+	flex-basis: 100%;
+	max-width: 100%;
+
+	text-align: center;
+
+	@media screen and (min-width: 1200px) {
+		flex-basis: calc((100% - 60px) / 3);
+	}
+
+	& > picture {
+		display: block;
+		height: 346px;
+		margin-bottom: 30px;
+	}
+
+	& img {
+		margin-inline: auto;
+
+		object-position: center;
+	}
+}
+
+.barbers-card__content {
+	padding-inline: 30px;
+	padding-bottom: 30px;
+}
+
+.barbers-card__heading {
+	margin-bottom: 8px;
+
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.39;
+	letter-spacing: 0.02em;
+	color: $COLOR_MAIN;
+}
+
+.barbers-card__description {
+	margin-bottom: 30px;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.36;
+	color: $COLOR_ACCENT;
+}
+
+.barbers-media__list {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.barbers-media__link {
+	display: flex;
+	width: 44px;
+	height: 44px;
+	justify-content: center;
+	align-items: center;
+
+	color: $COLOR_MAIN;
+
+	background-color: $COLOR_CONTRAST;
+	border-radius: 50%;
+
+	transition: color 250ms;
+
+	&:hover,
+	&:focus {
+		color: $COLOR_ACCENT;
+	}
+}
+
+.barbers-media__icon {
+	width: 20px;
+	height: 20px;
+
+	fill: currentColor;
+}

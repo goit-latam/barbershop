@@ -1,0 +1,36 @@
+.container {
+	max-width: 448px;
+	margin-inline: auto;
+	padding-inline: 15px;
+
+	@media screen and (min-width: 768px) {
+		max-width: 720px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		max-width: 1200px;
+	}
+}
+
+.hero__media-list::before,
+%comp-section__intro::before,
+.page-footer__media-list::before,
+.mobile-menu__media-wrapper:before {
+	content: '';
+
+	width: 60px;
+	height: 1px;
+	margin-right: 20px;
+
+	background-color: currentColor;
+}
+
+/* For EMERGENCIES (default image from the img tag) */
+picture img {
+	object-fit: cover;
+}
+
+.is-frozen {
+	overflow: hidden;
+	scrollbar-gutter: stable;
+}

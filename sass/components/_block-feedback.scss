@@ -1,0 +1,260 @@
+.feedback {
+	@extend %comp-section;
+
+	background-color: $BG_DARK;
+
+	background-image: url('../images/bg-contacts__mobile.png');
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: 100% 46.5%;
+
+	@media screen and (min-device-pixel-ratio: 2),
+		screen and (min-resolution: 192dpi),
+		screen and (min-resolution: 2dppx) {
+		background-image: url('../images/bg-contacts__mobile@2x.png');
+	}
+
+	@media screen and (min-width: 768px) {
+		background-image: url('../images/bg-contacts__tablet.png');
+
+		@media screen and (min-device-pixel-ratio: 2),
+			screen and (min-resolution: 192dpi),
+			screen and (min-resolution: 2dppx) {
+			background-image: url('../images/bg-contacts__tablet@2x.png');
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		padding-top: 130px;
+
+		background-image: url('../images/bg-contacts__desktop.png');
+		background-position: right center;
+		background-size: calc(50% - 15px) 100%;
+
+		@media screen and (min-device-pixel-ratio: 2),
+			screen and (min-resolution: 192dpi),
+			screen and (min-resolution: 2dppx) {
+			background-image: url('../images/bg-contacts__desktop@2x.png');
+		}
+
+		& > .container {
+			display: flex;
+			gap: 30px;
+		}
+	}
+}
+
+/* =============== Section Booking - START ============== */
+.booking {
+	margin-bottom: 84px;
+
+	@media screen and (min-width: 768px) {
+		margin-bottom: 100px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		flex-basis: calc((100% - 30px) / 2);
+		margin-bottom: 0;
+	}
+}
+
+.booking__heading {
+	@extend %comp-section__heading, %comp-section__heading--light;
+
+	margin-bottom: 44px;
+
+	text-align: center;
+
+	@media screen and (min-width: 768px) {
+		text-align: left;
+	}
+}
+
+.booking__form {
+	display: flex;
+	flex-wrap: wrap;
+
+	@media screen and (min-width: 768px) {
+		column-gap: 30px;
+	}
+}
+
+.booking__input {
+	flex-basis: 100%;
+	height: 24px;
+	margin-bottom: 44px;
+	padding: 0 0 8px 0;
+
+	letter-spacing: 0.1em;
+	color: $COLOR_CONTRAST;
+
+	outline: none;
+	border: none;
+	border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+	background-color: transparent;
+
+	transition: color 250ms, border-color 250ms;
+
+	@media screen and (min-width: 768px) {
+		flex-basis: calc((100% - 30px) / 2);
+	}
+}
+
+.booking__message {
+	width: 100%;
+	height: 76px;
+	margin-bottom: 44px;
+	padding: 0;
+
+	letter-spacing: 0.1em;
+	color: $COLOR_CONTRAST;
+
+	outline: none;
+	border: none;
+	border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+	background-color: transparent;
+
+	transition: color 250ms, border-color 250ms;
+	resize: none;
+}
+
+.booking__input:focus,
+.booking__message:focus {
+	color: $COLOR_CONTRAST;
+
+	border-color: $COLOR_CONTRAST;
+}
+
+.booking__input::placeholder,
+.booking__message::placeholder {
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.36;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	color: rgba(157, 164, 189, 0.4);
+
+	transition: color 250ms;
+}
+
+.booking__input:focus::placeholder,
+.booking__message:focus::placeholder {
+	color: $COLOR_CONTRAST;
+}
+
+.booking__btn {
+	@extend %comp-btn, %comp-btn--light;
+
+	margin-inline: auto;
+
+	@media screen and (min-width: 768px) {
+		margin-inline: 0;
+	}
+}
+/* ================ Section Booking - END =============== */
+
+/* ============== Section Contacts - START ============== */
+.contacts {
+	padding-top: 84px;
+
+	@media screen and (min-width: 768px) {
+		padding-top: 100px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		padding-top: 0;
+		padding-left: 100px;
+	}
+}
+
+.contacts__heading {
+	@extend %comp-section__heading, %comp-section__heading--light;
+
+	margin-bottom: 40px;
+
+	text-align: center;
+
+	@media screen and (min-width: 768px) {
+		text-align: left;
+	}
+}
+
+.contacts__wrapper {
+	@media screen and (min-width: 1200px) {
+		width: 255px;
+	}
+}
+
+.contacts__item:first-child > .contacts__text {
+	font-weight: 700;
+}
+
+.contacts__item:first-child .contacts__icon {
+	margin-top: 4px;
+}
+
+.contacts__item:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.contacts__item:not(:first-child) > .contacts__text {
+	align-items: center;
+}
+
+.contacts__item:last-child > .contacts__text {
+	text-decoration: underline;
+}
+
+a.contacts__text {
+	@extend %link;
+
+	display: flex;
+	gap: 16px;
+}
+
+.contacts__text {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.67;
+	color: $COLOR_SECONDARY;
+}
+
+.contacts__icon {
+	width: 24px;
+	height: 24px;
+
+	stroke: currentColor;
+	fill: none;
+}
+
+.contacts__intro {
+	@extend %comp-section__intro, %comp-section__heading--light;
+
+	margin-top: 44px;
+	margin-bottom: 20px;
+
+	&::before {
+		background-color: rgba(157, 164, 189, 0.4);
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.contacts__wrapper {
+		display: flex;
+
+		& address,
+		div {
+			flex-basis: 50%;
+		}
+	}
+
+	.contacts__address {
+		padding-right: 90px;
+	}
+
+	.contacts__intro {
+		margin-top: 0;
+	}
+}
+/* =============== Section Contacts - END =============== */

@@ -1,0 +1,963 @@
+/* ======= General Styles & Reset Default - START ======= */
+:root {
+	--color-main: #303030;
+	--color-text: #555555;
+	--color-contrast: #ffffff;
+	--color-accent: #ff6c00;
+	--color-secondary: #9da4bd;
+	--color-secondaryMod: rgba(157, 164, 189, 0.6);
+	--color-secondaryModFooter: rgba(157, 164, 189, 0.4);
+	--bg-light: #f7f7f7;
+	--bg-dark: #191c26;
+}
+
+address {
+	font-style: inherit;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: var(--color-main);
+
+	background-color: var(--color-contrast);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+	margin-block: 0;
+}
+
+p {
+	letter-spacing: 0.02em;
+}
+
+td {
+	padding: 0;
+}
+
+tr:not(:last-child) > td {
+	padding-bottom: 20px;
+}
+
+ul {
+	padding-left: 0;
+}
+
+.centered-text {
+	text-align: center;
+}
+
+.container {
+	width: 1200px;
+	margin-inline: auto;
+	padding-inline: 15px;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-vert-centered {
+	display: flex;
+	align-items: center;
+}
+
+.nounderline {
+	text-decoration: none;
+}
+
+.nobullet {
+	list-style: none;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+/* Temporary BLACK Background class */
+.black-bg {
+	background-color: black;
+}
+/* ======== General Styles & Reset Default - END ======== */
+
+/* ================= Components - START ================= */
+.comp-link-behaviour {
+	transition: color 250ms;
+}
+
+.comp-link-behaviour:hover,
+.comp-link-behaviour:focus {
+	color: var(--color-accent);
+}
+
+.comp-btn {
+	min-width: 160px;
+	height: 40px;
+	padding-block: 12px;
+	padding-inline: 20px;
+
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.33;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+
+	border: 1px solid var(--color-accent);
+	border-radius: 25px;
+	background: transparent;
+
+	cursor: pointer;
+	transition: color 250ms, background-color 250ms;
+}
+
+.comp-btn:hover,
+.comp-btn:focus {
+	color: var(--color-contrast);
+
+	background-color: var(--color-accent);
+}
+
+/* BUTTON Light Text Theme */
+.btn-light {
+	color: var(--color-contrast);
+}
+
+/* BUTTON Dark Text Theme */
+.btn-dark {
+	color: var(--color-main);
+}
+
+.comp-media-link {
+	display: block;
+
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.36;
+	letter-spacing: 0.2em;
+	color: var(--color-main);
+}
+
+.comp-section {
+	max-width: 1600px;
+	margin-inline: auto;
+	padding-block: 120px;
+}
+
+/* .comp-wrapper-intro {
+	margin-bottom: 20px;
+}
+
+.comp-line {
+	width: 60px;
+	height: 1px;
+	margin-right: 20px;
+}
+
+.comp-line-dark {
+	background-color: var(--color-main);
+}
+
+.comp-line-light {
+	background-color: var(--color-secondaryMod);
+} */
+
+.comp-section-intro {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.36;
+	letter-spacing: normal;
+	text-transform: uppercase;
+}
+
+.hero-media-list::before,
+.comp-section-intro::before,
+.footer-media-list::before {
+	content: '';
+	/* display: inline-block; */
+	width: 60px;
+	height: 1px;
+	margin-right: 20px;
+
+	background-color: currentColor;
+}
+
+/* Section INTRO Light Text Color Theme */
+.intro-light {
+	color: var(--color-secondaryMod);
+}
+
+.comp-section-heading {
+	font-family: 'Raleway', sans-serif;
+	font-size: 42px;
+	line-height: 1.17;
+	letter-spacing: 0.05em;
+}
+
+/* Section HEADING Light Text Color Theme */
+.heading-light {
+	color: var(--color-contrast);
+}
+
+.comp-section-subtitle {
+	margin-bottom: 20px;
+
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.67;
+	color: var(--color-text);
+}
+
+/* Section SUBTITLE Light Text Color Theme */
+.subtitle-light {
+	color: var(--color-secondary);
+}
+
+/* ================== Components - END ================== */
+
+/* =================== Header - START =================== */
+/* .header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+	width: 100%;
+	padding-block: 32px;
+} */
+
+/* .header > .container {
+	padding-right: calc(15px + 17px);
+} */
+
+/* .header-logo-icon {
+	display: block;
+
+	fill: var(--color-main);
+} */
+
+/* .header-navigation {
+	...
+} */
+
+/* .header-list {
+	margin-left: 131px;
+
+	font-size: 12px;
+	line-height: 1.33;
+} */
+
+/* .header-item:not(:last-child) {
+	margin-right: 30px;
+} */
+
+/* .header-link {
+	padding-block: 20px;
+
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.33;
+	letter-spacing: 0.1em;
+	color: var(--color-contrast);
+} */
+
+/* .header-phone {
+	margin-left: auto;
+	margin-right: 43px;
+} */
+
+/* ===================== Header - END =================== */
+
+/* ================ Section Hero - START ================ */
+/* .hero > .container {
+	background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
+		url(../images/bg-hero-01.jpg);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	position: relative;
+} */
+
+/* .hero-media-content {
+	position: relative;
+
+	width: 100px;
+
+	background-color: var(--color-contrast);
+} */
+
+/* .hero-media-list {
+	position: absolute;
+	bottom: 40px;
+	left: 34px;
+
+	width: 100%;
+
+	transform: rotate(-90deg);
+	transform-origin: left center;
+} */
+
+/* .hero-media-list::before {
+	margin-right: 40px;
+}
+
+.hero-media-item:first-child {
+	margin-right: 40px;
+} */
+
+/* .hero-content {
+	flex-grow: 1;
+	padding: 272px 526px 208px 100px;
+
+	background-color: var(--bg-dark);
+	background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
+		url(../images/bg-hero-01.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+} */
+
+/* .hero-heading {
+	margin-bottom: 20px;
+
+	font-family: 'Raleway', sans-serif;
+	font-size: 72px;
+	line-height: 1.18;
+	letter-spacing: 0.05em;
+	color: var(--color-contrast);
+} */
+
+/* .hero-subtitle {
+	margin-bottom: 0px;
+} */
+
+.hero-carousel-list {
+	position: absolute;
+	bottom: 40px;
+	right: 37px;
+
+	gap: 24px;
+	justify-content: flex-end;
+}
+
+.hero-carousel-item {
+	--color-carousel: var(--color-contrast);
+}
+
+.hero-carousel-item:last-child {
+	text-align: right;
+}
+
+.hero-carousel-link {
+	display: block;
+
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.36;
+	letter-spacing: 0.1em;
+	color: var(--color-carousel);
+
+	transition: color 250ms;
+}
+
+.hero-carousel-link:hover,
+.hero-carousel-link:focus {
+	color: var(--color-secondaryMod);
+}
+
+.hero-carousel-link::after {
+	content: '';
+
+	display: block;
+	width: 60px;
+	height: 1px;
+	margin-top: 8px;
+
+	background-color: currentColor;
+}
+
+/* .hero-carousel-line {
+	margin-right: 0;
+
+	background-color: var(--color-carousel);
+} */
+/* ================= Section Hero - END ================= */
+
+/* ================ Section About - START =============== */
+/* .about {
+	...
+} */
+
+/* .about-list {
+	margin-right: 30px;
+	gap: 30px;
+} */
+
+/* .about-item {
+	...
+} */
+
+/* .about-content {
+	max-width: 470px;
+} */
+
+/* .about-heading {
+	margin-bottom: 20px;
+} */
+
+/* .about-text {
+	margin-bottom: 40px;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.86;
+	color: var(--color-text);
+} */
+/* ================= Section About - END ================ */
+
+/* ========== Section Services & Prices - START ========= */
+/* .prices {
+	background-color: #111319;
+	background-image: url(../images/bg-prices.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+} */
+
+/* .prices-heading {
+	margin-bottom: 44px;
+} */
+
+/* .prices-content {
+	gap: 30px;
+	margin-bottom: 44px;
+} */
+
+/* .prices-list {
+	flex-basis: calc((100% - 30px) / 2);
+	padding: 30px 20px 30px 20px;
+	gap: 30px;
+} */
+
+/* .prices-list:first-child {
+	background-image: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+}
+
+.prices-list:last-child {
+	background-image: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
+} */
+
+/* .prices-item {
+	gap: 12px;
+	justify-content: space-between;
+	align-items: baseline;
+} */
+
+/* .prices-item:not(:last-child) {
+	margin-bottom: 20px;
+} */
+
+/* .prices-item::before {
+	content: '';
+	flex-grow: 1;
+	height: 1px;
+
+	background-color: rgba(157, 164, 189, 0.12);
+} */
+
+/* .prices-item-text {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.67;
+	color: var(--color-secondary);
+} */
+
+/* .prices-item-text:first-child {
+	order: -1;
+} */
+
+/* .prices-btn {
+	display: block;
+	margin-inline: auto;
+} */
+/* =========== Section Services & Prices - END ========== */
+
+/* ============== Section Our Facts - START ============= */
+/* .facts > .container {
+	padding-left: 115px;
+	gap: 130px;
+} */
+
+/* .facts-list {
+	flex-wrap: wrap;
+	width: 370px;
+} */
+
+/* .facts-item {
+	width: 170px;
+	padding-block: 20px;
+	padding-inline: 24px;
+
+	text-align: center;
+	background-color: var(--bg-light);
+} */
+
+/* .facts-item:nth-child(odd) {
+	margin-right: 30px;
+	margin-bottom: 30px;
+}
+
+.facts-item:nth-child(even) {
+	margin-top: 30px;
+} */
+
+/* .facts-number {
+	display: flex;
+	justify-content: center;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 1.36;
+	letter-spacing: 0.05em;
+} */
+
+/* .facts-number::after {
+	content: '+';
+	margin-left: 2px;
+	padding-top: 7px;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.38;
+	color: var(--color-accent);
+} */
+
+/* .facts-description {
+	margin-top: 6px;
+
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.36;
+	letter-spacing: normal;
+} */
+
+/* .facts-content {
+	max-width: 500px;
+} */
+
+/* .facts-heading {
+	max-width: 430px;
+	margin-bottom: 20px;
+} */
+/* =============== Section Our Facts - END ============== */
+
+/* ============= Section Our Barbers - START ============ */
+/* .barbers {
+	padding-bottom: 90px;
+
+	background-color: var(--bg-light);
+}
+
+.barbers-heading {
+	margin-bottom: 44px;
+} */
+
+/* .barbers-list {
+	gap: 30px;
+} */
+
+/* .barbers-item {
+	flex-basis: calc((100% - 60px) / 3);
+
+	text-align: center;
+} */
+
+/* .barbers-item-content {
+	padding-block: 30px;
+	padding-inline: 82px;
+} */
+
+/* .barbers-item-heading {
+	margin-bottom: 8px;
+
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.39;
+	letter-spacing: 0.02em;
+	color: #303030;
+} */
+
+/* .barbers-item-description {
+	margin-bottom: 30px;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.36;
+	color: var(--color-accent);
+} */
+
+/* .barbers-media-list {
+	gap: 10px;
+} */
+
+/* .barbers-media-link {
+	display: flex;
+	width: 44px;
+	height: 44px;
+	justify-content: center;
+	align-items: center;
+
+	color: var(--color-main);
+
+	background-color: var(--color-contrast);
+	border-radius: 50%;
+
+	transition: color 250ms;
+} */
+
+/* .barbers-media-link:hover,
+.barbers-media-link:focus {
+	color: var(--color-accent);
+} */
+
+/* .barbers-media-icon {
+	width: 20px;
+	height: 20px;
+
+	fill: currentColor;
+} */
+/* ============== Section Our Barbers - END ============= */
+
+/* ============= Section Our Gallery - START ============ */
+/* .gallery {
+	...
+} */
+
+/* .gallery-intro {
+	margin-bottom: 44px;
+}
+
+.gallery-list {
+	gap: 30px;
+}
+
+.gallery-item {
+	flex-basis: calc((100% - 90px) / 4);
+} */
+/* ============== Section Our Gallery - END ============= */
+
+/* .contacts-wrapper {
+	padding-block: 0;
+
+	background-color: var(--bg-dark);
+	background-image: url(../images/bg-contacts.png);
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: calc(50% - 15px) 100%;
+}
+
+.contact-wrapper > .container {
+	gap: 30px;
+} */
+
+/* =============== Section Booking - START ============== */
+/* .booking {
+	flex-basis: calc((100% - 30px) / 2);
+	padding-top: 130px;
+	padding-bottom: 120px;
+} */
+
+/* .booking-heading {
+	margin-bottom: 44px;
+} */
+
+/* .booking-form {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 30px;
+} */
+
+/* .booking-form-input {
+	flex-basis: calc((100% - 30px) / 2);
+	height: 24px;
+	margin-bottom: 44px;
+	padding: 0 0 8px 0;
+
+	color: var(--color-contrast);
+	letter-spacing: 0.1em;
+
+	outline: none;
+	border: none;
+	border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+	background-color: transparent;
+
+	transition: color 250ms, border-color 250ms;
+} */
+
+/* .booking-form-message {
+	width: 100%;
+	height: 76px;
+	margin-bottom: 44px;
+	padding: 0;
+
+	color: var(--color-contrast);
+	letter-spacing: 0.1em;
+
+	outline: none;
+	border: none;
+	border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+	background-color: transparent;
+
+	transition: color 250ms, border-color 250ms;
+	resize: none;
+} */
+
+/* .booking-form-input:focus,
+.booking-form-message:focus {
+	color: var(--color-contrast);
+
+	border-color: var(--color-contrast);
+}
+
+.booking-form-input::placeholder,
+.booking-form-message::placeholder {
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.36;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	color: rgba(157, 164, 189, 0.4);
+
+	transition: color 250ms;
+}
+
+.booking-form-input:focus::placeholder,
+.booking-form-message:focus::placeholder {
+	color: var(--color-contrast);
+} */
+/* ================ Section Booking - END =============== */
+
+/* ============== Section Contacts - START ============== */
+/* .contacts {
+	flex-basis: calc((100% - 30px) / 2);
+	padding-top: 130px;
+	padding-bottom: 120px;
+	padding-left: 100px;
+} */
+
+/* .contacts__heading {
+	margin-bottom: 40px;
+} */
+
+/* .address {
+	...
+} */
+
+/* .address-list {
+	...
+} */
+
+/* .address-item:not(:last-child) {
+	margin-bottom: 20px;
+} */
+
+/* a.address-text {
+	display: flex;
+	gap: 16px;
+}
+
+.address-text {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.67;
+	color: var(--color-secondary);
+} */
+
+/* .address-text-centered {
+	align-items: center;
+} */
+
+/* Text weight modificator for exactly ADDRESS */
+/* .address-strong {
+	font-weight: 700;
+} */
+
+/* .address-icon {
+	width: 24px;
+	height: 24px;
+
+	stroke: currentColor;
+	fill: none;
+} */
+
+/* .address-icon-top {
+	padding-top: 6px;
+} */
+
+/* .contacts-intro {
+	margin-top: 70px;
+	margin-bottom: 20px;
+} */
+
+.contacts-line-light {
+	background-color: var(--color-secondaryModFooter);
+}
+/* =============== Section Contacts - END =============== */
+
+/* =================== Footer - START =================== */
+/* .footer {
+	padding-block: 56px;
+} */
+
+/* .footer-copyright {
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.36;
+	letter-spacing: 0.2em;
+	color: var(--color-secondary);
+} */
+
+/* .footer-media-list {
+	margin-left: auto;
+
+	font-size: 11px;
+} */
+
+/* .footer-media-list::before {
+	margin-right: 40px;
+} */
+
+.footer-media-item:first-child {
+	margin-right: 40px;
+}
+/* ==================== Footer - END ==================== */
+
+/* ==================== Modal - START =================== */
+/* .backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0, 0, 0, 0.75);
+
+	transition: opacity 500ms, visibility 500ms;
+}
+
+.backdrop.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.is-frozen {
+	overflow: hidden;
+	scrollbar-gutter: stable;
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transform-origin: top left;
+	overflow: auto;
+
+	width: 408px;
+	min-height: 500px;
+	padding-top: 72px;
+	padding-bottom: 24px;
+	padding-inline: 24px;
+
+	border: 1px solid var(--color-secondary);
+	border-radius: 8px;
+	background-color: var(--bg-dark);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+		0px 2px 1px rgba(0, 0, 0, 0.2);
+
+	transition: transform 500ms;
+}
+
+.backdrop.is-hidden > .modal {
+	transform: scale(0.1);
+}
+
+.modal-close-btn {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+
+	border: 1px solid var(--color-accent);
+	border-radius: 50%;
+	background-color: transparent;
+
+	cursor: pointer;
+	transition: background-color 250ms;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+	background-color: var(--color-accent);
+}
+
+.modal-close-icon {
+	fill: var(--color-contrast);
+}
+
+.modal-title {
+	margin-bottom: 44px;
+}
+
+.modal-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-form-input {
+	flex-basis: 100%;
+}
+
+.modal-btn {
+	margin-inline: auto;
+} */
+/* ===================== Modal - END ==================== */

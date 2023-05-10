@@ -1,0 +1,82 @@
+.modal-backdrop {
+	@extend %backdrop;
+}
+
+.modal {
+	@media screen and (max-width: 424px) {
+		width: 270px;
+	}
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transform-origin: top left;
+	overflow: auto;
+
+	width: 408px;
+	min-height: 500px;
+	padding-top: 72px;
+	padding-bottom: 24px;
+	padding-inline: 24px;
+
+	border: 1px solid $COLOR_SECONDARY;
+	border-radius: 8px;
+	background-color: $BG_DARK;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+		0px 2px 1px rgba(0, 0, 0, 0.2);
+
+	transition: transform 500ms;
+}
+
+.modal__close-btn {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+
+	border: 1px solid $COLOR_ACCENT;
+	border-radius: 50%;
+	background-color: transparent;
+
+	cursor: pointer;
+	transition: background-color 250ms;
+
+	&:hover,
+	&:focus {
+		background-color: $COLOR_ACCENT;
+	}
+}
+
+.modal__close-icon {
+	fill: $COLOR_CONTRAST;
+}
+
+.modal__title {
+	@extend %comp-section__subtitle, %comp-section__subtitle--light;
+
+	margin-bottom: 44px;
+
+	text-align: center;
+}
+
+.modal__form {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal__input {
+	flex-basis: 100%;
+}
+
+.modal__btn {
+	@extend %comp-btn, %comp-btn--light;
+
+	margin-inline: auto;
+}
